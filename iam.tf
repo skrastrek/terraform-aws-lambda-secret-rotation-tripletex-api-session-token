@@ -6,7 +6,8 @@ resource "aws_iam_role" "this" {
 }
 
 module "assume_role_policy_document" {
-  source = "github.com/skrastrek/terraform-modules-aws-iam//policy-document/service-assume-role?ref=v0.2.0"
+  source  = "skrastrek/iam/aws//modules/policy-document/service-assume-role"
+  version = "1.0.0"
 
   service_identifiers = ["lambda.amazonaws.com"]
 }
@@ -17,7 +18,8 @@ resource "aws_iam_role_policy_attachment" "aws_lambda_basic_execution_role" {
 }
 
 module "tripletex_api_consumer_token_secret_read_role_policy" {
-  source = "github.com/skrastrek/terraform-modules-aws-iam//role-policy/secretsmanager-secret-read?ref=v0.2.0"
+  source  = "skrastrek/iam/aws//modules/role-policy/secretsmanager-secret-read"
+  version = "1.0.0"
 
   role_name   = aws_iam_role.this.name
   policy_name = "tripletex-api-consumer-token-secret-read"
@@ -26,7 +28,8 @@ module "tripletex_api_consumer_token_secret_read_role_policy" {
 }
 
 module "tripletex_api_employee_token_secret_read_role_policy" {
-  source = "github.com/skrastrek/terraform-modules-aws-iam//role-policy/secretsmanager-secret-read?ref=v0.2.0"
+  source  = "skrastrek/iam/aws//modules/role-policy/secretsmanager-secret-read"
+  version = "1.0.0"
 
   role_name   = aws_iam_role.this.name
   policy_name = "tripletex-api-employee-token-secret-read"
@@ -35,7 +38,8 @@ module "tripletex_api_employee_token_secret_read_role_policy" {
 }
 
 module "tripletex_api_session_token_secret_read_write_role_policy" {
-  source = "github.com/skrastrek/terraform-modules-aws-iam//role-policy/secretsmanager-secret-read-write?ref=v0.2.0"
+  source  = "skrastrek/iam/aws//modules/role-policy/secretsmanager-secret-read-write"
+  version = "1.0.0"
 
   role_name   = aws_iam_role.this.name
   policy_name = "tripletex-api-session-token-secret-read-write"
