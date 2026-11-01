@@ -8,9 +8,9 @@
     "date-fns": "^4.4.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.163",
-    "@types/node": "^26.6.3",
-    "@aws-sdk/client-secrets-manager": "^3.1142.0",
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^26.6.6",
+    "@aws-sdk/client-secrets-manager": "^3.1160.0",
     "esbuild": "^0.28.2"
   },
   "scripts": {
